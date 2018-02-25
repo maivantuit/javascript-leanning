@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scope variables</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// global scope:
+		var userName = "James";
+		function changeName(){
+			userName = "Luiz"
+		}
+		function showName(){
+			console.log(userName);
+		}
+		changeName();
+		showName(); //luiz
+
+		// local scope:
+		function changeName2(){
+			var userName2 = "Messi";
+		}
+		function showName(){
+			console.log(userName2);
+		}		
+		changeName2(); 
+		showName();// not display
+
+		// no block level scope:
+		if(userName){
+			var a =1;			
+			console.log(a);
+		}
+		console.log(a);
+	</script>
+</body>
+</html>

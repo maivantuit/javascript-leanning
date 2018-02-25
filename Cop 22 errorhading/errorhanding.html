@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error Handing</title>
+</head>
+<body>
+	<div id = "errorMessage"></div>
+	<script type="text/javascript">		
+		try{
+			var a =2;
+			var b= 0;
+			var result = a/b;
+
+			throw "Erre when / with number 0!!!";
+
+			throw{
+				code:101,
+				message: "Error division"
+			};
+
+		}catch(ex){
+			alert(ex);//Infinity
+			// if delete line 9: var a =2; then alert display!!!
+
+			document.getElementById("errorMessage").innerHTML = ex.message;
+		}finally{
+			console.log(result);
+			console.log("Close connection!!!");
+		}
+		// giong het java and c#.
+	</script>	
+</body>
+</html>

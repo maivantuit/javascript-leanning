@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eval</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var result;
+		function Sum(a,b){
+			return a+b;
+		}
+		eval('result = Sum(10,20);');
+		console.log(result); // 30
+
+		var obj = "({'fistName': 'Lion', 'lastName': 'Messi'})";
+		var js = eval(obj);
+		console.log(js.fistName); // Lion
+	</script>
+	<!-- 
+		Note: not to use eval():
+			- Slow
+			- Not secure
+			- Not readable and maintainable
+	-->
+</body>
+</html>
