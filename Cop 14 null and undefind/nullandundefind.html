@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Null and undefind</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// null:
+		var myVar = null;
+		if(myVar){
+			alert("myVar is not null");
+		}else{
+			alert("myVar is null"); // yes
+		}
+
+		// undefined:chưa xác định
+		function SumTwoNumber(num1, num2){
+			var result = num1 + num2;
+		}
+		var result1 = SumTwoNumber(4,6);
+		console.log(result1); //Undefind
+
+		// defined:đã xác định
+		function SumTwoNumber(num1, num2){
+			return num1 + num2;
+		}
+		var result2 = SumTwoNumber(4,6);
+		console.log(result2); //10
+
+
+	</script>
+	<!-- 
+		+ là của primitive type(nguyên thủy)
+		1. NULL:
+		2. Undefind:chưa xác định
+
+	-->
+</body>
+</html>

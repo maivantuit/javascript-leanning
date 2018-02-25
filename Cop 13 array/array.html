@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// init:
+		var array1 = [1,2,3,4,3,5,2,4,53,2];
+
+		var array2 = ["one, two, three, four, five"];
+
+		var array3 = [1,"two",3,4,"five",true,null];
+
+		var array4 = new Array();
+		array4[0] = "Spring";
+		array4[1] = "Summer";
+		array4[2] = "Autunm";
+		array4[3] = "Winter";
+
+		var array5 = new Array(3);
+		array5[0] = "past";
+		array5[1] = "present";
+		array5[2] = "future";
+
+		// display:
+		for(var i = 0; i<array4.length ; i++){
+			console.log(array4[i]);
+		}
+		console.log(array4[1]); // summer
+		console.log(array4);// [object Array]: ["Spring", "Summer", "Autunm", "Winter"]
+
+
+	</script>
+	<!--
+		1. Array Literal:
+		2. Array constructor:
+		3. API method of array: forEach(), indexOf(), join(), lastIndexOf(), map(), pop(), push(), reverse(), sort()...
+	-->
+</body>
+</html>
