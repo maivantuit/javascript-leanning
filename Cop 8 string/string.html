@@ -1,0 +1,36 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>String</title>
+</head>
+<body>
+	<script>
+		var str1 = new String('String object content');
+		var str2 = new String('String object content');
+		var str3 = "String object content"
+		var str4 = "in Javascript"
+		console.log(str1); // in ra 1 mảng kí tự
+		console.log(str1==str3); // true
+		console.log(str1==str2); // false
+		console.log(str1 +" "+ str4); //  String object content in Javascript
+		for(var i =0; i<str3.length;i++){
+			console.log(str3[i]);
+		}
+
+
+		// quotation: dấu \ 
+		var str5 = "You said: \ Hello\ with me!"; //You said:  Hello with me!
+		console.log(str5);
+
+		// ngoài ra có các IPA: indexOf,substr,replace, lastIndexOf,... như trong các ngôn ngữ khác: Java, C#,...
+		var str6 = "Mai Van Tu";
+		console.log(str6.indexOf("Mai"));// 0
+		console.log(str6.indexOf("Van"));// 4		
+
+	</script>
+	
+	<!-- 
+		- Khuyến khích sử dụng String kiểu nguyên thủy thay thế String kiểu object, nhằm so sánh tốt hơn.
+	-->
+</body>
+</html>

@@ -1,0 +1,44 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>Number</title>
+</head>
+<body>
+	<script>
+		var hexa = new Number(0xff);
+		console.log(hexa); // tối đa: 255
+
+		var num1 = new Number(100);
+		var num2 = new Number(100);
+		var num3 = 100;
+		console.log(num1==num2); // false
+		console.log(num1==num3); // true
+		console.log(typeof(num1)); // object
+		console.log(typeof(num3)); // number
+		// giống như String
+
+		// API:
+		console.log(hexa.valueOf()); //255
+		var str = "121";
+		var str2 = "abc";
+		console.log(isNaN(str)); // false, không phải là số
+		console.log(isNaN(str2)); // true
+		// còn nhiều API khác!
+
+	</script>
+	
+	<!-- 
+		Number là kiểu nguyên thủy (primitive)
+		1. Number có các properties:
+			+ MAX_VALUE
+			+ MIN_VALUE
+			+ NEGATIVE_INFINITY
+			+ NaN
+			+ POSITIE_INFINITY
+		2. Have API:
+			+ toFixed(fractionDigits)
+			+ valueOf()
+			+ toString()
+	-->
+</body>
+</html>
