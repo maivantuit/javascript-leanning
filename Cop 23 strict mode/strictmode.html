@@ -4,8 +4,49 @@
 	<title>Strict mode: chế độ nghiêm ngặt</title>
 </head>
 <body>
-	<script type="text/javascript">		
-		
+	<script type="text/javascript">	
+		// 1.	
+		"use strict"; 
+		function foo(){
+			var x,y;
+			x =1;
+			y=2;
+			z = x+y;
+			console.log(z);
+		}		
+		foo();
+			// error: Variable undefined in strict mode
+
+		// 2.
+		with(document){
+			write(title);
+		}
+		// this usage:
+		var obj = {
+			go: function(){
+				console.log(this);
+			}
+		}
+		obj.go();
+		// this:
+		console.log(this);
+
+		// read-only properties:
+		// non-extensible objects and variables
+		// duplicate paramêtrs and properties
+		// eval variables
+		// delete operator
+		// using arguments, caller, and calle
+		// octals
+
 	</script>	
+	<!--
+		1. 
+			+ Chưa khởi tạo z, không use (use strict";) => kq: 3
+			+ Dùng (use strict";) => kq: error below
+		2. 
+			+ không use (use strict";) => kq: display title and ngược lại.
+		3. Vậy strict mode giúp tăng bảo mật, tăng sự chặt chẻ trong javascript: ECMAScript 5.
+	-->
 </body>
 </html>
