@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// Object Literal:
+		var emtyObj = {
+
+		}
+		var person = {
+			firstName: "John"
+		}
+		var messageObj = {
+			showMessage: function(val){
+				alert(val);
+			}
+		}
+		var person1 = {
+			firstName:"James",
+			lastName: "Liuz",
+			age:22,
+			getFullName:function(){
+				return this.firstName + " " + this.lastName;
+			}
+		}
+
+		var a= person1["firstName"];
+		var b= person1["lastName"];
+		console.log(a); //James
+		console.log(b); // Liuz
+
+		console.log(person1.firstName); //James
+		console.log(person1.lastName); //Liuz
+		console.log(person1.getFullName()); //James Liuz
+
+		person1.firstName = "Mai Van";		
+		person1["lastName"] = "Tu";
+		console.log(person1.firstName); //Mai Van
+		console.log(person1.lastName); //Tu
+		console.log(person1.getFullName()); //Mai Van Tu
+
+		console.log("Use loop: ");
+		for(var item in person1){
+			console.log(item); // get property.
+			console.log(item.firstName); // undefind
+		}
+		console.log("End loop: ");
+
+		// Object contructor:
+		var person2 = new Object();
+		person2.firstName = "Xuan";
+		person2.lastName = "Quynh";
+		person2.getFullName = function(){
+			return person2.firstName + " " + person2.lastName;
+		}
+		console.log(person2.getFullName());	// Xuan Quynh	
+
+		// Undefined property of method:
+		var person3 = new Object();
+		console.log(person3.firstName); // undefined
+		if(person3.hasOwnProperty("firstName")){
+			console.log(person3.firstName);
+		}else{
+			console.log("This property not exists");
+		}
+
+		// method: (tham chiếu: truyền vào 1 object => thay đổi giá trị)
+
+		function changeReference(person1Psarameter){
+			person1.firstName = "James 1";
+			person1.lastName = "Liuz 1";
+		}
+		changeReference(person1);
+		console.log(person1.firstName); // Jame 1
+		console.log(person1.lastName); // Liuz 1
+		console.log(person1.getFullName()); // Jame 1 Liuz 1
+
+		// Nested objects: (ẩn núp, lập ổ, chim làm tổ, lồng chim)
+		person1.address = {
+			phone:"097723722",
+			email:"tu@gmail.com",
+			street:"44thanhlong"
+			// có thể bên trong này còn thêm object nữa.
+		}
+		console.log(person1.address); //in ra 3 thuộc tính của object address.
+		console.log(person1.address.email);//tu@gmail.com
+	</script>
+	<!--
+		1. Object literal:
+		2. Object constructor:
+		3. Undefined property of method:
+		4. Nested objects:
+
+	-->
+</body>
+</html>
