@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class</title>
+</head>
+<body>
+	<script type="text/javascript">	
+		// 1. class:
+		function Person(){
+			this.firstName = "unknown";
+			this.lasrName = "unknown";
+			this.getFullName = function(){ // ham nac danh.
+				return this.firstName + this.lastName;
+			}
+		}
+
+		var person1 = new Person();
+		person1.firstName = "James";
+		person1.lastName = "Rodiguez";
+		console.log(person1.firstName + " "+person1.lastName);
+
+		var person2 = new Person();
+		person2.firstName = "Lion";
+		person2.lastName = "Messi";
+		console.log(person2.firstName + " "+person2.lastName);
+		
+		console.log(person1.getFullName());
+		console.log(person2.getFullName());
+
+		// 2. constructor:
+
+		function Student(_firstName,_lastName,_age){
+			this.firstName = _firstName;
+			this.lastName = _lastName;
+			this.age = _age;
+			this.getInfo = function(){ // ham nac danh.
+				return this.firstName + this.lastName + this.age;
+			}
+		}
+
+		var stud1 = new Student("Cris","Ronadol",33);
+		console.log(stud1.firstName + " "+stud1.lastName+ " "+stud1.age);
+		var stud2 = new Student("David"," Luiz ",28);
+		console.log(stud2.getInfo());
+
+		// properties, get and set: Object.defineProperty(), C#
+		function Employee(){
+			var _firstName = "unknown";
+			var _lastName = "unknown";
+			Object.defineProperty(this,{
+				"FirstName":{
+					set:function(value){
+						_firstName = value;
+					},
+					get:function(){
+						return _firstName;
+					}
+				},
+				"LastName":{
+					set:function(value){
+						_lastName = value;
+					},
+					get:function(){
+						return _lastName;
+					}
+				}
+			});
+		}
+		var emp1 = new Employee();
+		emp1.FirstName = "James ";
+		emp1.LastName = "Rodiguez";
+		
+		console.log(emp1.FirstName + " "+ emp1.LastName);
+
+
+	</script>	
+	<!--
+		1. Javascript ECMAScript 5.
+			
+	-->
+</body>
+</html>
