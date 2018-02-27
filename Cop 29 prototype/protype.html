@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New key word</title>
+</head>
+<body>
+	<script type="text/javascript">	
+		// 1. not prototype:
+		function Student(){
+			this.name = 'John';
+			this.gender = 'Male';
+		}
+		var std1 = new Student();
+		std1.age = 15;
+		alert(std1.age);//15
+
+		var std2 = new Student();		
+		alert(std2.age);//undefined
+		
+		// 2. prototype:
+		function Student(){
+			this.name = 'John';
+			this.gender = 'Male';
+		}
+		Student.prototype.age =15;
+		var std1 = new Student();
+		std1.age = 15;
+		alert(std1.age);//15
+
+		var std2 = new Student();		
+		alert(std2.age);//15
+	</script>	
+	<!--
+		1. function -> prototype
+			
+	-->
+</body>
+</html>
