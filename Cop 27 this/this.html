@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This key word</title>
+</head>
+<body>
+	<script type="text/javascript">	
+		// 1. global scope:
+		var x = 100;
+		function IsThis(){
+			var x= 200;
+			alert("x1 = "+x);
+			alert("x2 = "+this.x);
+		}
+		IsThis(); // call function.
+
+		// 2. this inside object's method:
+		var myVar = 100;
+		function WhoIsThis(){
+			this.myVar= 200;			
+		}
+		var obj1 = new WhoIsThis();
+		var obj2 = new WhoIsThis();
+		obj2.myVar = 300;
+		console.log(obj1.myVar);//200
+		console.log(obj2.myVar);//300
+		WhoIsThis(); // call function.
+
+		// 3. call and apply:
+		function WhoIsThis2(){
+			alert('Hi');
+		}
+		WhoIsThis2();
+		WhoIsThis2.call();
+		WhoIsThis2.apply();
+
+		// 4. bind:
+		var myVar = 100;
+		function SomeFunction(callback){
+			var myVar =200;
+			callback();
+		};
+
+		var obj = {
+				myVar:300,
+				WhoIsThis: function(){
+					alert("'this' point to"+this+", myVar = "+this.myVar);
+				}
+		};
+		SomeFunction(obj.WhoIsThis());
+		SomeFunction(obj.WhoIsThis.bind()); // bind.
+
+
+	</script>	
+	<!--
+		1. 
+			
+	-->
+</body>
+</html>

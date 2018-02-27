@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class</title>
+</head>
+<body>
+	<script type="text/javascript">	
+		// 1. object:
+		function Employee(){ // class
+			this.firstName = "",
+			this.lastName = "",
+			this.age = 0;
+		}
+
+		var emp1 = new Employee();
+		emp1.firstName = "James";
+		emp1.lastName = "Rodiguez"
+		/// cach 1:
+		console.log(Object.keys(emp1)); // lay ra thuoc tinh:[object Array]: ["firstName", "lastName", "age"]
+		/// cach 2:
+		for(var item in emp1){
+			console.log(item);
+		}
+
+		// 2. property descriptor:
+		console.log(Object.getOwnPropertyDescriptor(emp1,"firstName"));
+		console.log(Object.getOwnPropertyDescriptor(emp1,"lastName"));
+		/*
+		[object Object]: {configurable: true, enumerable: true, value: "James", writable: true}
+		[object Object]: {configurable: true, enumerable: true, value: "Rodiguez", writable: true}
+			+ configurable:
+			+ enumerable:
+			+ value:
+			+ writable:
+		*/
+
+		// 3. defineProperty:
+		Object.defineProperty(emp1,"firstName",{writable:false}); // co 4 thuoc tinh.
+		console.log(Object.getOwnPropertyDescriptor(emp1,"firstName")); // no se chuyen thuoc tinh ve false.
+		console.log(Object.getOwnPropertyDescriptor(emp1,"lastName"));
+	</script>	
+	<!--
+		1. 
+			
+	-->
+</body>
+</html>
